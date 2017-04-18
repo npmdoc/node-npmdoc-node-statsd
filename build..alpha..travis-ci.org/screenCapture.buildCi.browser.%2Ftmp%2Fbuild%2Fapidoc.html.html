@@ -1,0 +1,719 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/sivy/node-statsd">node-statsd (v0.1.1)</a>
+</h1>
+<h4>node client for Etsy'd StatsD server</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-statsd">module node-statsd</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.node-statsd">
+            function <span class="apidocSignatureSpan"></span>node-statsd
+            <span class="apidocSignatureSpan">(host, port, prefix, suffix, globalize, cacheDns, mock, global_tags)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.StatsD">
+            function <span class="apidocSignatureSpan">node-statsd.</span>StatsD
+            <span class="apidocSignatureSpan">(host, port, prefix, suffix, globalize, cacheDns, mock, global_tags)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.toString">
+            function <span class="apidocSignatureSpan">node-statsd.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-statsd.</span>StatsD.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-statsd.StatsD">module node-statsd.StatsD</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.StatsD.StatsD">
+            function <span class="apidocSignatureSpan">node-statsd.</span>StatsD
+            <span class="apidocSignatureSpan">(host, port, prefix, suffix, globalize, cacheDns, mock, global_tags)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-statsd.StatsD.prototype">module node-statsd.StatsD.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.StatsD.prototype.close">
+            function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.StatsD.prototype.decrement">
+            function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>decrement
+            <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.StatsD.prototype.gauge">
+            function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>gauge
+            <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.StatsD.prototype.histogram">
+            function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>histogram
+            <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.StatsD.prototype.increment">
+            function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>increment
+            <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.StatsD.prototype.send">
+            function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>send
+            <span class="apidocSignatureSpan">(stat, value, type, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.StatsD.prototype.sendAll">
+            function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>sendAll
+            <span class="apidocSignatureSpan">(stat, value, type, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.StatsD.prototype.set">
+            function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>set
+            <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.StatsD.prototype.timing">
+            function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>timing
+            <span class="apidocSignatureSpan">(stat, time, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.StatsD.prototype.unique">
+            function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>unique
+            <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-statsd" id="apidoc.module.node-statsd">module node-statsd</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.node-statsd" id="apidoc.element.node-statsd.node-statsd">
+        function <span class="apidocSignatureSpan"></span>node-statsd
+        <span class="apidocSignatureSpan">(host, port, prefix, suffix, globalize, cacheDns, mock, global_tags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">node-statsd = function (host, port, prefix, suffix, globalize, cacheDns, mock, global_tags) {
+  var options = host || {},
+         self = this;
+
+  if(arguments.length &gt; 1 || typeof(host) === 'string'){
+    options = {
+      host        : host,
+      port        : port,
+      prefix      : prefix,
+      suffix      : suffix,
+      globalize   : globalize,
+      cacheDns    : cacheDns,
+      mock        : mock === true,
+      global_tags : global_tags
+    };
+  }
+
+  this.host        = options.host || 'localhost';
+  this.port        = options.port || 8125;
+  this.prefix      = options.prefix || '';
+  this.suffix      = options.suffix || '';
+  this.socket      = dgram.createSocket('udp4');
+  this.mock        = options.mock;
+  this.global_tags = options.global_tags || [];
+
+  if(options.cacheDns === true){
+    dns.lookup(options.host, function(err, address, family){
+      if(err == null){
+        self.host = address;
+      }
+    });
+  }
+
+  if(options.globalize){
+    global.statsd = this;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.StatsD" id="apidoc.element.node-statsd.StatsD">
+        function <span class="apidocSignatureSpan">node-statsd.</span>StatsD
+        <span class="apidocSignatureSpan">(host, port, prefix, suffix, globalize, cacheDns, mock, global_tags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">StatsD = function (host, port, prefix, suffix, globalize, cacheDns, mock, global_tags) {
+  var options = host || {},
+         self = this;
+
+  if(arguments.length &gt; 1 || typeof(host) === 'string'){
+    options = {
+      host        : host,
+      port        : port,
+      prefix      : prefix,
+      suffix      : suffix,
+      globalize   : globalize,
+      cacheDns    : cacheDns,
+      mock        : mock === true,
+      global_tags : global_tags
+    };
+  }
+
+  this.host        = options.host || 'localhost';
+  this.port        = options.port || 8125;
+  this.prefix      = options.prefix || '';
+  this.suffix      = options.suffix || '';
+  this.socket      = dgram.createSocket('udp4');
+  this.mock        = options.mock;
+  this.global_tags = options.global_tags || [];
+
+  if(options.cacheDns === true){
+    dns.lookup(options.host, function(err, address, family){
+      if(err == null){
+        self.host = address;
+      }
+    });
+  }
+
+  if(options.globalize){
+    global.statsd = this;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.toString" id="apidoc.element.node-statsd.toString">
+        function <span class="apidocSignatureSpan">node-statsd.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-statsd.StatsD" id="apidoc.module.node-statsd.StatsD">module node-statsd.StatsD</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.StatsD.StatsD" id="apidoc.element.node-statsd.StatsD.StatsD">
+        function <span class="apidocSignatureSpan">node-statsd.</span>StatsD
+        <span class="apidocSignatureSpan">(host, port, prefix, suffix, globalize, cacheDns, mock, global_tags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">StatsD = function (host, port, prefix, suffix, globalize, cacheDns, mock, global_tags) {
+  var options = host || {},
+         self = this;
+
+  if(arguments.length &gt; 1 || typeof(host) === 'string'){
+    options = {
+      host        : host,
+      port        : port,
+      prefix      : prefix,
+      suffix      : suffix,
+      globalize   : globalize,
+      cacheDns    : cacheDns,
+      mock        : mock === true,
+      global_tags : global_tags
+    };
+  }
+
+  this.host        = options.host || 'localhost';
+  this.port        = options.port || 8125;
+  this.prefix      = options.prefix || '';
+  this.suffix      = options.suffix || '';
+  this.socket      = dgram.createSocket('udp4');
+  this.mock        = options.mock;
+  this.global_tags = options.global_tags || [];
+
+  if(options.cacheDns === true){
+    dns.lookup(options.host, function(err, address, family){
+      if(err == null){
+        self.host = address;
+      }
+    });
+  }
+
+  if(options.globalize){
+    global.statsd = this;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-statsd.StatsD.prototype" id="apidoc.module.node-statsd.StatsD.prototype">module node-statsd.StatsD.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.StatsD.prototype.close" id="apidoc.element.node-statsd.StatsD.prototype.close">
+        function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (){
+    this.socket.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.StatsD.prototype.decrement" id="apidoc.element.node-statsd.StatsD.prototype.decrement">
+        function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>decrement
+        <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decrement = function (stat, value, sampleRate, tags, callback) {
+  this.sendAll(stat, -value || -1, 'c', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Timing: sends a timing command with the specified milliseconds
+client.timing('response_time', 42);
+
+// Increment: Increments a stat by a value (default is 1)
+client.increment('my_counter');
+
+// Decrement: Decrements a stat by a value (default is -1)
+client.<span class="apidocCodeKeywordSpan">decrement</span>('my_counter');
+
+// Histogram: send data for histogram stat
+client.histogram('my_histogram', 42);
+
+// Gauge: Gauge a stat by a specified amount
+client.gauge('my_gauge', 123.45);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.StatsD.prototype.gauge" id="apidoc.element.node-statsd.StatsD.prototype.gauge">
+        function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>gauge
+        <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gauge = function (stat, value, sampleRate, tags, callback) {
+  this.sendAll(stat, value, 'g', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Decrement: Decrements a stat by a value (default is -1)
+client.decrement('my_counter');
+
+// Histogram: send data for histogram stat
+client.histogram('my_histogram', 42);
+
+// Gauge: Gauge a stat by a specified amount
+client.<span class="apidocCodeKeywordSpan">gauge</span>('my_gauge', 123.45);
+
+// Set: Counts unique occurrences of a stat (alias of unique)
+client.set('my_unique', 'foobar');
+client.unique('my_unique', 'foobarbaz');
+
+// Incrementing multiple items
+client.increment(['these', 'are', 'different', 'stats']);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.StatsD.prototype.histogram" id="apidoc.element.node-statsd.StatsD.prototype.histogram">
+        function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>histogram
+        <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">histogram = function (stat, value, sampleRate, tags, callback) {
+  this.sendAll(stat, value, 'h', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Increment: Increments a stat by a value (default is 1)
+client.increment('my_counter');
+
+// Decrement: Decrements a stat by a value (default is -1)
+client.decrement('my_counter');
+
+// Histogram: send data for histogram stat
+client.<span class="apidocCodeKeywordSpan">histogram</span>('my_histogram', 42);
+
+// Gauge: Gauge a stat by a specified amount
+client.gauge('my_gauge', 123.45);
+
+// Set: Counts unique occurrences of a stat (alias of unique)
+client.set('my_unique', 'foobar');
+client.unique('my_unique', 'foobarbaz');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.StatsD.prototype.increment" id="apidoc.element.node-statsd.StatsD.prototype.increment">
+        function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>increment
+        <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">increment = function (stat, value, sampleRate, tags, callback) {
+  this.sendAll(stat, value || 1, 'c', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var StatsD = require('node-statsd'),
+    client = new StatsD();
+
+// Timing: sends a timing command with the specified milliseconds
+client.timing('response_time', 42);
+
+// Increment: Increments a stat by a value (default is 1)
+client.<span class="apidocCodeKeywordSpan">increment</span>('my_counter');
+
+// Decrement: Decrements a stat by a value (default is -1)
+client.decrement('my_counter');
+
+// Histogram: send data for histogram stat
+client.histogram('my_histogram', 42);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.StatsD.prototype.send" id="apidoc.element.node-statsd.StatsD.prototype.send">
+        function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>send
+        <span class="apidocSignatureSpan">(stat, value, type, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (stat, value, type, sampleRate, tags, callback) {
+  var message = this.prefix + stat + this.suffix + ':' + value + '|' + type,
+      buf,
+      merged_tags = [];
+
+  if(sampleRate &amp;&amp; sampleRate &lt; 1){
+    if(Math.random() &lt; sampleRate){
+      message += '|@' + sampleRate;
+    } else {
+      //don't want to send if we don't meet the sample ratio
+      return;
+    }
+  }
+
+  if(tags &amp;&amp; Array.isArray(tags)){
+    merged_tags = merged_tags.concat(tags);
+  }
+  if(this.global_tags &amp;&amp; Array.isArray(this.global_tags)){
+    merged_tags = merged_tags.concat(this.global_tags);
+  }
+  if(merged_tags.length &gt; 0){
+    message += '|#' + merged_tags.join(',');
+  }
+
+  // Only send this stat if we're not a mock Client.
+  if(!this.mock) {
+    buf = new Buffer(message);
+    this.socket.send(buf, 0, buf.length, this.port, this.host, callback);
+  } else {
+    if(typeof callback === 'function'){
+      callback(null, 0);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.StatsD.prototype.sendAll" id="apidoc.element.node-statsd.StatsD.prototype.sendAll">
+        function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>sendAll
+        <span class="apidocSignatureSpan">(stat, value, type, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendAll = function (stat, value, type, sampleRate, tags, callback){
+  var completed = 0,
+      calledback = false,
+      sentBytes = 0,
+      self = this;
+
+  if(sampleRate &amp;&amp; typeof sampleRate !== 'number'){
+    callback = tags;
+    tags = sampleRate;
+    sampleRate = undefined;
+  }
+
+  if(tags &amp;&amp; !Array.isArray(tags)){
+    callback = tags;
+    tags = undefined;
+  }
+
+<span class="apidocCodeCommentSpan">  /**
+   * Gets called once for each callback, when all callbacks return we will
+   * call back from the function
+   * @private
+   */
+</span>  function onSend(error, bytes){
+    completed += 1;
+    if(calledback || typeof callback !== 'function'){
+      return;
+    }
+
+    if(error){
+      calledback = true;
+      return callback(error);
+    }
+
+    sentBytes += bytes;
+    if(completed === stat.length){
+      callback(null, sentBytes);
+    }
+  }
+
+  if(Array.isArray(stat)){
+    stat.forEach(function(item){
+      self.send(item, value, type, sampleRate, tags, onSend);
+    });
+  } else {
+    this.send(stat, value, type, sampleRate, tags, callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.StatsD.prototype.set" id="apidoc.element.node-statsd.StatsD.prototype.set">
+        function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>set
+        <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (stat, value, sampleRate, tags, callback) {
+  this.sendAll(stat, value, 's', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Histogram: send data for histogram stat
+client.histogram('my_histogram', 42);
+
+// Gauge: Gauge a stat by a specified amount
+client.gauge('my_gauge', 123.45);
+
+// Set: Counts unique occurrences of a stat (alias of unique)
+client.<span class="apidocCodeKeywordSpan">set</span>('my_unique', 'foobar');
+client.unique('my_unique', 'foobarbaz');
+
+// Incrementing multiple items
+client.increment(['these', 'are', 'different', 'stats']);
+
+// Sampling, this will sample 25% of the time the StatsD Daemon will compensate for sampling
+client.increment('my_counter', 1, 0.25);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.StatsD.prototype.timing" id="apidoc.element.node-statsd.StatsD.prototype.timing">
+        function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>timing
+        <span class="apidocSignatureSpan">(stat, time, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">timing = function (stat, time, sampleRate, tags, callback) {
+  this.sendAll(stat, time, 'ms', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If an array is specified as the `name` parameter each item in that array will be sent along with the specified value.
+
+```javascript
+var StatsD = require('node-statsd'),
+    client = new StatsD();
+
+// Timing: sends a timing command with the specified milliseconds
+client.<span class="apidocCodeKeywordSpan">timing</span>('response_time', 42);
+
+// Increment: Increments a stat by a value (default is 1)
+client.increment('my_counter');
+
+// Decrement: Decrements a stat by a value (default is -1)
+client.decrement('my_counter');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-statsd.StatsD.prototype.unique" id="apidoc.element.node-statsd.StatsD.prototype.unique">
+        function <span class="apidocSignatureSpan">node-statsd.StatsD.prototype.</span>unique
+        <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unique = function (stat, value, sampleRate, tags, callback) {
+  this.sendAll(stat, value, 's', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+client.histogram('my_histogram', 42);
+
+// Gauge: Gauge a stat by a specified amount
+client.gauge('my_gauge', 123.45);
+
+// Set: Counts unique occurrences of a stat (alias of unique)
+client.set('my_unique', 'foobar');
+client.<span class="apidocCodeKeywordSpan">unique</span>('my_unique', 'foobarbaz');
+
+// Incrementing multiple items
+client.increment(['these', 'are', 'different', 'stats']);
+
+// Sampling, this will sample 25% of the time the StatsD Daemon will compensate for sampling
+client.increment('my_counter', 1, 0.25);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
