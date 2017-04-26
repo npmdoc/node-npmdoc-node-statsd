@@ -81,15 +81,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.node-statsd.toString">
-            function <span class="apidocSignatureSpan">node-statsd.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-statsd.</span>StatsD.prototype</span>
 
         </li>
@@ -307,21 +298,6 @@
 
 
 
-    <h2>
-        <a href="#apidoc.element.node-statsd.toString" id="apidoc.element.node-statsd.toString">
-        function <span class="apidocSignatureSpan">node-statsd.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
 
 </div>
 
@@ -393,7 +369,20 @@
     <li>description and source-code<pre class="apidocCodePre">close = function (){
     this.socket.close();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+};
+
+/**
+ * Close the underlying socket and stop listening for data on it.
+ */
+Client.prototype.close = function(){
+    this.socket.<span class="apidocCodeKeywordSpan">close</span>();
+}
+
+exports = module.exports = Client;
+exports.StatsD = Client;
+...</pre></li>
     </ul>
 
 
@@ -561,7 +550,23 @@ client.histogram(&#x27;my_histogram&#x27;, 42);
     }
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if(completed === stat.length){
+      callback(null, sentBytes);
+    }
+  }
+
+  if(Array.isArray(stat)){
+    stat.forEach(function(item){
+      self.<span class="apidocCodeKeywordSpan">send</span>(item, value, type, sampleRate, tags, onSend);
+    });
+  } else {
+    this.send(stat, value, type, sampleRate, tags, callback);
+  }
+};
+
+/**
+...</pre></li>
     </ul>
 
 
@@ -620,7 +625,23 @@ client.histogram(&#x27;my_histogram&#x27;, 42);
     this.send(stat, value, type, sampleRate, tags, callback);
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param stat {String|Array} The stat(s) to send
+* @param time {Number} The time in milliseconds to send
+* @param sampleRate {Number=} The Number of times to sample (0 to 1). Optional.
+* @param tags {Array=} The Array of tags to add to metrics. Optional.
+* @param callback {Function=} Callback when message is done being delivered. Optional.
+*/
+Client.prototype.timing = function (stat, time, sampleRate, tags, callback) {
+ this.<span class="apidocCodeKeywordSpan">sendAll</span>(stat, time, &#x27;ms&#x27;, sampleRate, tags, callback);
+};
+
+/**
+* Increments a stat by a specified amount
+* @param stat {String|Array} The stat(s) to send
+* @param value The value to send
+* @param sampleRate {Number=} The Number of times to sample (0 to 1). Optional.
+...</pre></li>
     </ul>
 
 
