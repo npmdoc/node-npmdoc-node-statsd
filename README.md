@@ -1,6 +1,6 @@
 # npmdoc-node-statsd
 
-#### api documentation for  [node-statsd (v0.1.1)](https://github.com/sivy/node-statsd)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-statsd.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-statsd) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-statsd.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-statsd)
+#### basic api documentation for  [node-statsd (v0.1.1)](https://github.com/sivy/node-statsd)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-statsd.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-statsd) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-statsd.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-statsd)
 
 #### node client for Etsy'd StatsD server
 
@@ -75,7 +75,8 @@
     "scripts": {
         "test": "mocha -R spec"
     },
-    "version": "0.1.1"
+    "version": "0.1.1",
+    "bin": {}
 }
 ```
 
